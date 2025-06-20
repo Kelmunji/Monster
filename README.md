@@ -1,98 +1,105 @@
-# Monster Collection CLI Game
+# 🐉 MonsterQuest: Terminal Adventure Game
 
-Welcome to the **Monster Collection CLI Game** – a text-based adventure where you catch, train, and battle monsters in a terminal-based world inspired by Pokémon!
-
-## 📦 Features
-- 🎮 Start a player profile and choose your starter monster
-- 🧭 Explore and encounter wild monsters
-- 🎯 Attempt to catch monsters based on type rarity and your level
-- 📚 View your growing monster collection
-- ⚙️ CLI interface built with `typer`
-- 🗃️ Persistent data storage with SQLAlchemy + SQLite
+Welcome to **MonsterQuest**, a terminal-based fantasy adventure game where players collect, battle, and trade creatures in a dynamic CLI environment. Powered by Python and SQLAlchemy, this project brings the magic of turn-based monster battles to your terminal window.
 
 ---
 
-## 🗂️ Project Structure
-```
-monster_game/
-├── __init__.py
-├── database.py           # Database connection
-├── models.py             # ORM models
-├── seed_data.py          # Initial monster species
-├── monster_system.py     # Core monster logic
-├── cli.py                # CLI application
-requirements.txt          # Dependencies
-README.md                 # Project info
-```
+## 🚀 Features
+
+- 🧙 Player profile system with experience and currency tracking  
+- 🐾 Collect, level up, and manage a roster of creatures  
+- ⚔️ Turn-based combat with skill and health logic  
+- 🔁 Trade creatures between players  
+- 🗃️ Persistent storage using SQLite and SQLAlchemy  
+- 🧪 Includes seed data to jumpstart gameplay
 
 ---
 
-## 🚀 Setup Instructions
+## 📁 Project Structure
 
-### 1. Clone the Repository
 ```bash
-git clone <your-repo-url>
-cd <your-repo-name>
-```
-
-### 2. Create a Virtual Environment and Install Requirements
-```bash
-pip install pipenv
-pipenv install
-pipenv shell
-```
-
-### 3. Initialize the Database
-```bash
-python -m monster_game.database
-python -m monster_game.seed_data
-```
-
-### 4. Run the CLI Game
-```bash
-python -m monster_game.cli --help
+Monster-Game/
+├── start.py             # Game entry point
+├── launcher.py          # Command-line interface launcher
+├── engine/              # Core game logic
+│   ├── combat.py
+│   ├── creature.py
+│   ├── user.py
+│   ├── trade.py
+│   └── rules.py
+├── core/                # Database models and connection handling
+│   ├── connection.py
+│   ├── models.py
+│   └── manager.py
+├── data/                # Game database and seeding
+│   ├── monsters.db
+│   └── seed.py
+├── migrations/          # Alembic migrations
+├── Pipfile              # Dependency definitions
+├── Pipfile.lock
+└── README.md
 ```
 
 ---
 
-## 🔧 CLI Commands
+## ⚙️ Installation & Setup
 
-### Start a Player Profile
-```bash
-python -m monster_game.cli start --username "Ash"
-```
+1. **Clone the repo**  
+   ```bash
+   git clone https://github.com/your-username/monster-quest.git
+   cd monster-quest
+   ```
 
-### Explore the World and Catch Monsters
-```bash
-python -m monster_game.cli explore --player-id 1
-```
+2. **Create virtual environment with Pipenv**
+   ```bash
+   pipenv install
+   pipenv shell
+   ```
 
-### View Your Monster Collection
-```bash
-python -m monster_game.cli collection --player-id 1
-```
+3. **Run seed script (optional)**
+   ```bash
+   python data/seed.py
+   ```
 
----
-
-## 💡 Future Features
-- Turn-based battle system
-- Monster evolution
-- Gym challenges
-- Trading and PvP features
-
----
-
-## 🧠 Learning Objectives
-- Practice with SQLAlchemy ORM and database relationships
-- Build robust command-line interfaces with `typer`
-- Learn modular software design using Python
-- Implement game mechanics and persistent game state
+4. **Start the game**
+   ```bash
+   python start.py
+   ```
 
 ---
 
-## 🏁 License
-This project is for educational use. Contributions are welcome!
+## 📚 Tech Stack
+
+- Python 3.10+
+- SQLAlchemy ORM
+- SQLite for local storage
+- Alembic for migrations
 
 ---
 
-Happy coding, Monster Trainer! 🐉⚡🌿
+## 🧠 Game Flow Summary
+
+- **Launcher**: Choose to create a player or start exploring
+- **Battles**: Encounter wild creatures and fight turn-by-turn
+- **Trading**: Exchange monsters with other players
+- **Leveling Up**: Gain experience from wins and collect rewards
+
+---
+
+## 🛠️ Development Tips
+
+- All database-related logic is in `core/`
+- Game loop and logic live in `engine/`
+- Use `seed.py` to populate basic monsters and players
+
+---
+
+## 📜 License
+
+This project is released under the MIT License. Feel free to modify and expand!
+
+---
+
+## 👾 Credits
+
+Built with imagination and code. Inspired by classic monster-collection games.
